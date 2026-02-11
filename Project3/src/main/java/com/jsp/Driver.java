@@ -16,6 +16,9 @@ public class Driver {
 
         Person person = (Person) context.getBean("person");
 
+        person.setName("Anjali");
+        person.setCity("Jaipur");
+
         System.out.println(person.getName());
         System.out.println(person.getCity());
 

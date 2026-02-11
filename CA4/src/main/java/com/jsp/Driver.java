@@ -1,10 +1,8 @@
 package com.jsp;
 
-import com.jsp.Config.Config;
-import com.jsp.model.Student;
+import com.qsp.User;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 
 public class Driver {
 
@@ -12,14 +10,18 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Student student = context.getBean(Student.class);
+        User u = context.getBean(User.class);
 
-        student.setName("Abhinav");
-        System.out.println(student.getName());
-        System.out.println(student);
+        u.setName("Anshika");
+        u.setCity("Raipur");
+
+        System.out.println(u.getName());
+        System.out.println(u.getCity());
 
         context.close();
+        System.out.println("closed");
 
 
     }
+
 }

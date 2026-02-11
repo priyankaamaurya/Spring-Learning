@@ -1,10 +1,8 @@
 package com.jsp;
 
-import com.jsp.Config.Config;
-import com.jsp.model.Student;
+import com.qsp.Animal;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 
 public class Driver {
 
@@ -12,14 +10,16 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Student student = context.getBean(Student.class);
+        Animal a = context.getBean(Animal.class);
 
-        student.setName("Abhinav");
-        System.out.println(student.getName());
-        System.out.println(student);
+        a.setName("Cat");
+        a.setSound("Meow Meow");
+
+        System.out.println(a.getName());
+        System.out.println(a.getSound());
 
         context.close();
-
+        System.out.println("closed");
 
     }
 }

@@ -1,10 +1,8 @@
 package com.jsp;
 
-import com.jsp.Config.Config;
-import com.jsp.model.Student;
+import com.qsp.Product;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 
 public class Driver {
 
@@ -12,14 +10,15 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Student student = context.getBean(Student.class);
+        Product p = context.getBean(Product.class);
 
-        student.setName("Abhinav");
-        System.out.println(student.getName());
-        System.out.println(student);
+        p.setpId("AED124");
+        p.setpName("Washing Machine");
+
+        System.out.println(p.getpId());
+        System.out.println(p.getpName());
 
         context.close();
-
-
+        System.out.println("closed");
     }
 }

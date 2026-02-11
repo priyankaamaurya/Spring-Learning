@@ -1,25 +1,27 @@
 package com.jsp;
 
-import com.jsp.Config.Config;
-import com.jsp.model.Student;
+import com.qsp.Student;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-
 public class Driver {
+
+    public Driver() {
+    }
 
     public static void main(String[] args) {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Student student = context.getBean(Student.class);
+        Student s = context.getBean(Student.class);
 
-        student.setName("Abhinav");
-        System.out.println(student.getName());
-        System.out.println(student);
+        s.setName("Anamika");
+        s.setSchoolName("XYZ Public School");
+
+        System.out.println(s.getName());
+        System.out.println(s.getSchoolName());
 
         context.close();
-
-
+        System.out.println("Without xml based");
     }
 }
