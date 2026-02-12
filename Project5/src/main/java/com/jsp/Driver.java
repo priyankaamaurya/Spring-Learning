@@ -1,6 +1,6 @@
 package com.jsp;
 
-import com.jsp.Config.Config;
+import com.jsp.config.Config;
 import com.jsp.model.Student;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,7 +14,8 @@ public class Driver {
 
         Student student = context.getBean(Student.class);
 
-        System.out.println(student);
+        System.out.println(student.getName());
+        System.out.println(student.getCity());
 
         context.close();
 
