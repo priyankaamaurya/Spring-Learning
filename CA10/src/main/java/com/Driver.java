@@ -1,6 +1,7 @@
-package com.jsp;
+package com;
 
-import com.qsp.Animal;
+import com.jsp.Config;
+import com.qsp.University;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,16 +11,15 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Animal a = context.getBean(Animal.class);
+        University u = context.getBean(University.class);
 
-        a.setName("Cat");
-        a.setSound("Meow Meow");
+        u.setUniversityName("Integral University");
+        u.setLocation("Lucknow");
 
-        System.out.println(a.getName());
-        System.out.println(a.getSound());
+        System.out.println(u.getUniversityName());
+        System.out.println(u.getLocation());
 
         context.close();
         System.out.println("closed");
-
     }
 }

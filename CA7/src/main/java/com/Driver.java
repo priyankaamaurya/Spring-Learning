@@ -1,6 +1,7 @@
-package com.jsp;
+package com;
 
-import com.qsp.Sports;
+import com.jsp.Config;
+import com.qsp.Music;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,15 +11,16 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Sports s = context.getBean(Sports.class);
+        Music m = context.getBean(Music.class);
 
-        s.setSportsName("Cricket");
-        s.setNoOfPlayers(11);
+        m.setSingerName("Atif Aslam");
+        m.setMusicType("sofi");
 
-        System.out.println(s.getSportsName());
-        System.out.println(s.getNoOfPlayers());
+        System.out.println(m.getSingerName());
+        System.out.println(m.getMusicType());
 
         context.close();
         System.out.println("closed");
+
     }
 }

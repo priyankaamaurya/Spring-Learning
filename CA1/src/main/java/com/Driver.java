@@ -1,24 +1,28 @@
-package com.jsp;
+package com;
 
-import com.qsp.Fruits;
+import com.jsp.Config;
+import com.qsp.Student;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Driver {
 
+    public Driver() {
+    }
+
     public static void main(String[] args) {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Fruits f = context.getBean(Fruits.class);
+        Student s = context.getBean(Student.class);
 
-        f.setName("Pineapple");
-        f.setTaste("Sweet");
+        s.setName("Anamika");
+        s.setSchoolName("XYZ Public School");
 
-        System.out.println(f.getName());
-        System.out.println(f.getTaste());
+        System.out.println(s.getName());
+        System.out.println(s.getSchoolName());
 
         context.close();
-        System.out.println("closed");
+        System.out.println("Without xml based");
     }
 }

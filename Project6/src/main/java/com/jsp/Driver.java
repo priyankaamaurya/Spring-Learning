@@ -1,8 +1,11 @@
 package com.jsp;
 
-import com.qsp.Employee;
+import com.jsp.config.Config;
+import com.jsp.model.Student;
+import com.jsp.model.Subject;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class Driver {
 
@@ -10,19 +13,16 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Employee e = context.getBean(Employee.class);
+        Student student = context.getBean(Student.class);
 
-        e.setEid(1);
-        e.setDept("IT");
+        System.out.println(student.getName());
+        System.out.println(student.getCity());
 
-        System.out.println(e.getEid());
-        System.out.println(e.getDept());
+        System.out.println(student.getSubject());
+        System.out.println(student.getMobile());
 
         context.close();
-        System.out.println("Container closed");
+
+
     }
-
-
-
-
 }

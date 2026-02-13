@@ -1,6 +1,7 @@
-package com.jsp;
+package com;
 
-import com.qsp.Music;
+import com.jsp.Config;
+import com.qsp.Product;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,16 +11,15 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Music m = context.getBean(Music.class);
+        Product p = context.getBean(Product.class);
 
-        m.setSingerName("Atif Aslam");
-        m.setMusicType("sofi");
+        p.setpId("AED124");
+        p.setpName("Washing Machine");
 
-        System.out.println(m.getSingerName());
-        System.out.println(m.getMusicType());
+        System.out.println(p.getpId());
+        System.out.println(p.getpName());
 
         context.close();
         System.out.println("closed");
-
     }
 }

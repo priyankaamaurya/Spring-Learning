@@ -1,6 +1,7 @@
-package com.jsp;
+package com;
 
-import com.qsp.Product;
+import com.jsp.Config;
+import com.qsp.Fruits;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,13 +11,13 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Product p = context.getBean(Product.class);
+        Fruits f = context.getBean(Fruits.class);
 
-        p.setpId("AED124");
-        p.setpName("Washing Machine");
+        f.setName("Pineapple");
+        f.setTaste("Sweet");
 
-        System.out.println(p.getpId());
-        System.out.println(p.getpName());
+        System.out.println(f.getName());
+        System.out.println(f.getTaste());
 
         context.close();
         System.out.println("closed");

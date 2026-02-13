@@ -1,27 +1,29 @@
-package com.jsp;
+package com;
 
-import com.qsp.Student;
+import com.jsp.Config;
+import com.qsp.Employee;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Driver {
 
-    public Driver() {
-    }
-
     public static void main(String[] args) {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Student s = context.getBean(Student.class);
+        Employee e = context.getBean(Employee.class);
 
-        s.setName("Anamika");
-        s.setSchoolName("XYZ Public School");
+        e.setEid(1);
+        e.setDept("IT");
 
-        System.out.println(s.getName());
-        System.out.println(s.getSchoolName());
+        System.out.println(e.getEid());
+        System.out.println(e.getDept());
 
         context.close();
-        System.out.println("Without xml based");
+        System.out.println("Container closed");
     }
+
+
+
+
 }

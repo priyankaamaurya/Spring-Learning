@@ -1,6 +1,7 @@
-package com.jsp;
+package com;
 
-import com.qsp.University;
+import com.jsp.Config;
+import com.qsp.User;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,15 +11,18 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        University u = context.getBean(University.class);
+        User u = context.getBean(User.class);
 
-        u.setUniversityName("Integral University");
-        u.setLocation("Lucknow");
+        u.setName("Anshika");
+        u.setCity("Raipur");
 
-        System.out.println(u.getUniversityName());
-        System.out.println(u.getLocation());
+        System.out.println(u.getName());
+        System.out.println(u.getCity());
 
         context.close();
         System.out.println("closed");
+
+
     }
+
 }

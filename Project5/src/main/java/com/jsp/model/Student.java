@@ -31,6 +31,7 @@ public class Student {
         return name;
     }
 
+//    @Value(value = "${name}")
     public void setName(String name) {
         this.name = name;
     }
@@ -39,6 +40,7 @@ public class Student {
         return city;
     }
 
+//    @Value(value = "${city}")
     public void setCity(String city) {
         this.city = city;
     }

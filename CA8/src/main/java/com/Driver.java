@@ -1,6 +1,7 @@
-package com.jsp;
+package com;
 
-import com.qsp.Car;
+import com.jsp.Config;
+import com.qsp.Sports;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,13 +11,13 @@ public class Driver {
 
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Car c = context.getBean(Car.class);
+        Sports s = context.getBean(Sports.class);
 
-        c.setCarModel("Creta");
-        c.setCarId(1732);
+        s.setSportsName("Cricket");
+        s.setNoOfPlayers(11);
 
-        System.out.println(c.getCarModel());
-        System.out.println(c.getCarId());
+        System.out.println(s.getSportsName());
+        System.out.println(s.getNoOfPlayers());
 
         context.close();
         System.out.println("closed");
